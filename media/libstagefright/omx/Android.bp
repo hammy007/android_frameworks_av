@@ -79,6 +79,15 @@ cc_library_shared {
         "-Wno-documentation",
     ],
 
+    product_variables: {
+        uses_media_extensions: {
+            cflags: ["-DTARGET_USES_MEDIA_EXTENSIONS"],
+        },
+        has_legacy_camera_hal1: {
+            cflags: ["-DTARGET_HAS_LEGACY_CAMERA_HAL1"],
+        },
+    },
+
     sanitize: {
         misc_undefined: [
             "signed-integer-overflow",
